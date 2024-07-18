@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<bean id = "customerStore" class="com.EZ.customer.store.impl.CustomerStoreImpl"></bean>
+<bean id ="customerService" class="com.EZ.customer.service.impl.CustomerServiceImpl">
+	<property name = "store" ref ="customerStore"></property>
+	<!-- property 는 Setter 메소드용 -->
+	<!-- <constructor-arg ref ="customerStore"></constructor-arg> -->
+	<!--constructor 는 생성자를 이용한 의존성 주입 용  -->
+</bean>
+</beans>
